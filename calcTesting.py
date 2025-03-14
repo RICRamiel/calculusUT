@@ -22,6 +22,9 @@ class MyTestCase(unittest.TestCase):
     def test_very_big(self):
         self.assertEqual(self.calculator.sum(sys.maxsize * 5, 10), sys.maxsize * 5 + 10)
 
+    def test_very_very_big(self):
+        self.assertEqual(self.calculator.sum(2 ^ 64, 2 ^ 64), 2 ^ 64 * 2)
+
     def test_history_store(self):
         self.calculator.sum(2, 3)
         self.assertEqual(self.calculator.history.data, [(2, 3, 5)])
